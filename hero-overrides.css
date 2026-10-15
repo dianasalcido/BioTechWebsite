@@ -1,14 +1,124 @@
-/* Homepage hero tuning: keep the title prominent without overwhelming the supporting line. */
+/* Homepage montage tuning: keep the title prominent and the Central Valley phrase together. */
 .hero h1 {
-  font-size: clamp(2.6rem, 5.3vw, 5.5rem);
+  font-size: clamp(2.9rem, 5.8vw, 5.9rem);
 }
 
 .hero .hero-intro {
-  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+}
+
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero h1 em {
+  font-weight: 600;
 }
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 2.65rem;
+    font-size: 2.8rem;
+  }
+
+  .hero-line {
+    white-space: normal;
+  }
+}
+
+/* Targeted refinements from the latest visual review. */
+.resource-community {
+  background-color: #006495;
+}
+
+.resource-community::before {
+  background-image: linear-gradient(#006495b8, #006495b8);
+}
+
+.resource-community h3:hover,
+.resource-community h3:focus-visible {
+  color: var(--aqua);
+}
+
+.work-heading .button-blue {
+  background: #ffd100;
+  color: var(--blue);
+}
+
+.work-heading .button-blue:hover,
+.work-heading .button-blue:focus-visible {
+  background: #c8a977;
+  color: var(--blue);
+}
+
+.work-item {
+  grid-template-columns: 45px 1fr;
+}
+
+.work-item > span:nth-child(2) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.work-item small {
+  line-height: 1.45;
+}
+
+.impact-section {
+  background: var(--blue);
+  color: #fff;
+}
+
+.impact-section .eyebrow {
+  color: var(--aqua);
+}
+
+.impact-section h2 {
+  color: #fff;
+}
+
+.impact-top > p,
+.impact-section .stat span {
+  color: #fff;
+}
+
+.quote-mark {
+  left: -4.5rem;
+}
+
+.footer-contact-name {
+  margin: .85rem 0 .15rem;
+  color: #dfeaec;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.email-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: .55rem;
+}
+
+.email-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.email-link:hover .email-icon,
+.email-link:focus-visible .email-icon {
+  stroke: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .quote-mark {
+    left: -2rem;
+    font-size: 12rem;
   }
 }
