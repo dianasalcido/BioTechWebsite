@@ -1,4 +1,4 @@
-# Centre for Sustainable Biotechnology
+# Center for Sustainable Biotechnology
 
 Homepage foundation for CSB at Stanislaus State, built on the `dianaloops` branch.
 
