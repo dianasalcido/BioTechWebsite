@@ -40,6 +40,36 @@
   color: var(--aqua);
 }
 
+/* Regional Resource photography appears only while its block is hovered. */
+.resource-innovation::before,
+.resource-opportunity::before,
+.resource-community::before {
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity .24s ease, transform .4s ease;
+}
+
+.resource-innovation::before {
+  background-image: linear-gradient(#039563b8, #039563b8), url('assets/images/regional-innovation.jpg');
+}
+
+.resource-opportunity::before {
+  background-image: linear-gradient(#b19110b8, #b19110b8), url('assets/images/regional-opportunity.jpg');
+}
+
+.resource-community::before {
+  background-image: linear-gradient(#006495b8, #006495b8), url('assets/images/regional-community.jpg');
+}
+
+.resource-innovation:hover::before,
+.resource-opportunity:hover::before,
+.resource-community:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .work-heading .button-blue {
   background: #ffd100;
   color: var(--blue);
