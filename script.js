@@ -22,3 +22,23 @@ if (header) {
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 }
+
+const eventView = document.querySelector('#education-outreach');
+const homeSections = [...document.querySelectorAll('main > section:not(#education-outreach)')];
+
+const updateExperience = () => {
+  const showEvent = window.location.hash === '#education-outreach';
+  document.body.classList.toggle('event-page-active', showEvent);
+  if (eventView) {
+    eventView.hidden = !showEvent;
+    eventView.setAttribute('aria-hidden', String(!showEvent));
+  }
+  homeSections.forEach((section) => { section.hidden = showEvent; });
+  document.title = showEvent
+    ? 'Education & Outreach | Center for Sustainable Biotechnology'
+    : 'Center for Sustainable Biotechnology | Stanislaus State';
+  if (showEvent) window.scrollTo({ top: 0, behavior: 'auto' });
+};
+
+window.addEventListener('hashchange', updateExperience);
+updateExperience();
